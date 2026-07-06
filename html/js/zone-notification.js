@@ -148,28 +148,9 @@
     }
   }
 
-  function initBrowserDemo() {
-    const runDemo = () => {
-      showZoneNotification(
-        "Innenstadt",
-        "Bitte passen Sie Ihre Geschwindigkeit an."
-      );
-    };
-
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", runDemo);
-    } else {
-      runDemo();
-    }
-  }
-
   function init() {
     window.addEventListener("message", handleNuiMessage);
     document.documentElement.classList.add(isFiveMNui() ? "nui-mode" : "browser-mode");
-
-    if (!isFiveMNui()) {
-      initBrowserDemo();
-    }
   }
 
   window.showZoneNotification = showZoneNotification;
